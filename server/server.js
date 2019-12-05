@@ -2,8 +2,11 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
+const cors = require('cors')
 import request from '../utils/utils';
 
+
+app.use(cors())
 app.get('/spotify-token', (req,res) => {
     (async () => {
         await request(process.env.URL_TOKEN_SPOTIFY, {
