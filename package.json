@@ -4,12 +4,35 @@
   "description": "Get Token for spotify app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo \"Starting application...\" && node -r esm server/server.js",
+    "dev": "echo \"Developing...\" && nodemon"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "watch": [
+      "**/*.js"
+    ],
+    "ext": "js",
+    "ignore": [
+      "test/*",
+      "wiki/*",
+      "swagger/*",
+      "node_modules/*",
+      "dist/*"
+    ],
+    "delay": "2500",
+    "exec": "node -r esm server/server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
   }
 }
