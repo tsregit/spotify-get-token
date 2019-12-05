@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 import request from '../utils/utils';
 
-app.post('/spotify-token', (req,res) => {
+app.get('/spotify-token', (req,res) => {
     (async () => {
         await request(process.env.URL_TOKEN_SPOTIFY, {
             method: 'POST',
