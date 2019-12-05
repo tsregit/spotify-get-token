@@ -18,6 +18,6 @@ app.post('/spotify-token', (req,res) => {
       })();
 })
 
-app.listen(process.env.NODE_PORT, () =>{
-   console.log(`Se inicio sesion en puerto: ${process.env.NODE_PORT}`); 
+app.listen(process.env.PORT, () =>{
+   console.log(`Se inicio sesion en puerto: ${process.env.PORT}`); 
 });
